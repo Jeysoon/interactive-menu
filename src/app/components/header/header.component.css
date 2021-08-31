@@ -1,0 +1,66 @@
+header {
+  width: 100vw;
+  height: 90px;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: hidden;
+}
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border-radius: 1rem;
+}
+.menu-btn-burger {
+  width: 30px;
+  height: 4px;
+  background: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn-burger::before{
+  transform: translateY(-16px);
+}
+.menu-btn-burger::after{
+  transform: translateY(16px);
+}
+.open{
+  background: transparent;
+}
+.closed{
+  background: transparent;
+}
+/*ANIMATION*/
+
+.menu-btn.closed .menu-btn-burger{
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.closed .menu-btn-burger::before{
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.closed .menu-btn-burger::after{
+  transform: rotate(-45deg) translate(35px, 35px);
+}
